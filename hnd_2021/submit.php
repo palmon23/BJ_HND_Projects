@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("First name, email and subject are required.");
     }
 
-    // Prepared statement to insert the record safely
+    // insert the record safely
     $stmt = $conn->prepare(
         "INSERT INTO applicants (first_name, email, subject, country, comment, gender, degree_level)
          VALUES (?, ?, ?, ?, ?, ?, ?)"
