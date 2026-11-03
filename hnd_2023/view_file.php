@@ -1,5 +1,5 @@
 <?php
-// (iii) Read data from hnd2023.txt and display it in an HTML table
+// Read from hnd2023 folder
 $file = "hnd2023.txt";
 ?>
 <!DOCTYPE html>
