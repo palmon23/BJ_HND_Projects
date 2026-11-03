@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        table { border-collapse: separate; border-spacing: 3px; }
+        td { border: 1px solid #888; padding: 3px 6px; background: #f3f3f3; }
+        input[type="text"] { width: 300px; }
+        .error { color: red; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+<!-- (i) HTML form -->
+<form name="myForm" action="save.php" method="post" onsubmit="return validateForm()">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" id="name"></td>
+        </tr>
+        <tr>
+            <td>EMail</td>
+            <td><input type="text" name="email" id="email"></td>
+        </tr>
+        <tr>
+            <td>Zip Code</td>
+            <td><input type="text" name="zip" id="zip"></td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td>
+                <select name="country" id="country">
+                    <option value="">[choose yours]</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="INDIA">INDIA</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+
+<!-- (ii) JavaScript validation -->
+<script>
+function validateForm() {
+    var name    = document.getElementById("name").value.trim();
+    var email   = document.getElementById("email").value.trim();
+    var zip     = document.getElementById("zip").value.trim();
+    var country = document.getElementById("country").value;
+
+    // All data must be entered
+    if (name === "" || email === "" || zip === "" || country === "") {
+        alert("All fields must be filled in before submission.");
+        return false;
+    }
+
+    // Standard email format: something@domain.extension
+    var emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address (e.g. name@example.com).");
+        document.getElementById("email").focus();
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</body>
+</html>

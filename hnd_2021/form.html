@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="submit.php" method="post">
+
+        <div class="row">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" placeholder="TUBUO" required>
+        </div>
+
+        <div class="row">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="ministry@gmail.com" required>
+        </div>
+
+        <div class="row">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" placeholder="programming" required>
+        </div>
+
+        <div class="row">
+            <label for="country">Country:</label>
+            <select id="country" name="country">
+                <option value="none" selected>none</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Nigeria">USA</option>
+                <option value="Ghana">Ghana</option>
+                <option value="France">France</option>
+                <option value="Other">kuwait</option>
+                <option value="Other">Canada</option>
+                <option value="Other">End_of_developer_thinking</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment" rows="8" cols="40"></textarea>
+        </div>
+
+        <div class="row">
+            <label>Gender:</label>
+            <div class="group">
+                <label class="inline"><input type="radio" name="gender" value="M" checked> M</label>
+                <label class="inline"><input type="radio" name="gender" value="F"> F</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <label>Highest degree level</label>
+            <div class="group stacked">
+                <label class="inline"><input type="checkbox" class="degree" name="degree" value="Post-Doc" checked> Post-Doc</label>
+                <label class="inline"><input type="checkbox" class="degree" name="degree" value="Ph.D"> Ph.D</label>
+                <label class="inline"><input type="checkbox" class="degree" name="degree" value="Master/MS.c"> Master/MS.c</label>
+                <label class="inline"><input type="checkbox" class="degree" name="degree" value="Licence/BS.c"> Licence/BS.c</label>
+                <label class="inline"><input type="checkbox" class="degree" name="degree" value="Bacc/AL-GCE"> Bacc/AL-GCE</label>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button type="reset">reset</button>
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+
+    <script>
+        // check only one box at a time
+        var boxes = document.querySelectorAll('.degree');
+        boxes.forEach(function (box) {
+            box.addEventListener('change', function () {
+                if (box.checked) {
+                    boxes.forEach(function (other) {
+                        if (other !== box) { other.checked = false; }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

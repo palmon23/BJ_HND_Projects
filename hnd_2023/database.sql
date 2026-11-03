@@ -1,0 +1,11 @@
+-- (v) Create database called school with a table called SWE
+CREATE DATABASE IF NOT EXISTS school;
+USE school;
+
+CREATE TABLE IF NOT EXISTS SWE (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    zip VARCHAR(20) NOT NULL,
+    country VARCHAR(50) NOT NULL
+);

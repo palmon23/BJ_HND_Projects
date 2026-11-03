@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f4f8;
+    margin: 0;
+    padding: 30px 10px;
+}
+
+form {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 25px 30px;
+    border: 1px solid #c9d1dc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 18px;
+}
+
+.row > label {
+    width: 170px;
+    font-weight: bold;
+    color: #1f2d3d;
+    padding-top: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #8a97a8;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2b6cb0;
+    box-shadow: 0 0 4px rgba(43, 108, 176, 0.5);
+}
+
+select {
+    flex: 0 0 auto;
+    min-width: 120px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.group {
+    display: flex;
+    gap: 18px;
+    padding-top: 6px;
+}
+
+.group.stacked {
+    flex-direction: column;
+    gap: 6px;
+}
+
+label.inline {
+    font-weight: normal;
+    width: auto;
+    cursor: pointer;
+}
+
+.buttons {
+    margin-top: 10px;
+    padding-left: 170px;
+}
+
+button {
+    padding: 8px 20px;
+    margin-right: 10px;
+    border: 1px solid #8a97a8;
+    border-radius: 4px;
+    background-color: #e2e8f0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    background-color: #2b6cb0;
+    color: #ffffff;
+    border-color: #2b6cb0;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 520px) {
+    .row {
+        flex-direction: column;
+    }
+    .row > label {
+        width: auto;
+        padding-bottom: 4px;
+    }
+    .buttons {
+        padding-left: 0;
+    }
+}
