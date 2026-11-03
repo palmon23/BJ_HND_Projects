@@ -1,4 +1,3 @@
--- (v) Create database called school with a table called SWE
 CREATE DATABASE IF NOT EXISTS school;
 USE school;
 
