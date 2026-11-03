@@ -1,5 +1,5 @@
 <?php
-// Get the parameters sent from the login form and display them
+// Get the data sent from the login form 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $login    = $_POST["login"] ?? "";
     $password = $_POST["password"] ?? "";
