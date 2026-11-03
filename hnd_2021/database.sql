@@ -2,7 +2,6 @@
 CREATE DATABASE IF NOT EXISTS application;
 USE application;
 
--- Table for storage
 CREATE TABLE IF NOT EXISTS applicants (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
