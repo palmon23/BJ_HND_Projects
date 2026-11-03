@@ -1,5 +1,5 @@
 <?php
-// ---------- Collect data ----------
+//  Collect data 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     die("Please submit the form first. <a href='form.html'>Go to form</a>");
 }
@@ -9,7 +9,6 @@ $email   = trim($_POST["email"]   ?? "");
 $zip     = trim($_POST["zip"]     ?? "");
 $country = trim($_POST["country"] ?? "");
 
-// ---------- (iv) PHP validation ----------
 // All data must be entered
 if ($name === "" || $email === "" || $zip === "" || $country === "") {
     die("Error: All fields must be filled in. <a href='form.html'>Go back</a>");
@@ -20,12 +19,11 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     die("Error: Invalid email address. <a href='form.html'>Go back</a>");
 }
 
-// ---------- (iii) Write data to hnd2023.txt ----------
 // Each record on one line, fields separated by |
 $line = $name . "|" . $email . "|" . $zip . "|" . $country . PHP_EOL;
 file_put_contents("hnd2023.txt", $line, FILE_APPEND | LOCK_EX);
 
-// ---------- (v) Insert data into database school, table SWE ----------
+//  Insert data into database school
 $conn = new mysqli("localhost", "root", "", "school");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
