@@ -12,7 +12,6 @@
 </head>
 <body>
 
-<!-- (i) HTML form -->
 <form name="myForm" action="save.php" method="post" onsubmit="return validateForm()">
     <table>
         <tr>
@@ -45,7 +44,7 @@
     </table>
 </form>
 
-<!-- (ii) JavaScript validation -->
+<!-- JavaScript validation -->
 <script>
 function validateForm() {
     var name    = document.getElementById("name").value.trim();
@@ -59,7 +58,6 @@ function validateForm() {
         return false;
     }
 
-    // Standard email format: something@domain.extension
     var emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
     if (!emailPattern.test(email)) {
         alert("Please enter a valid email address (e.g. name@example.com).");
